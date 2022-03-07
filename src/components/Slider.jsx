@@ -50,6 +50,26 @@ const Image = styled.img`
 
 const InfoContainer = styled.div`
     flex: 1;
+    padding: 1.2em;
+`
+
+const Title = styled.div`
+    font-size: 3.5rem;
+    font-weight: 600;
+`
+
+const Description = styled.div`
+    margin: 1.2em 0;
+    font-size: 1.2rem;
+    font-weight: 400;
+    letter-spacing: 0.2rem;
+`
+
+const Button = styled.button`
+    padding: 0.8em;
+    font-size: 1rem;
+    background-color: transparent;
+    cursor: pointer;
 `
 
 const Slider = () => {
@@ -64,7 +84,15 @@ const Slider = () => {
                             <Image src={require("../images/mac_screen.jpg")} alt={"something here"}/>
                         </ImgContainer>
                         <InfoContainer>
-
+                            <Title>
+                                Mac Screen
+                            </Title>
+                            <Description>
+                                Get Mac Screen at 20% off! Once in lifetime offer!
+                            </Description>
+                            <Button>
+                                Get Now!
+                            </Button>
                         </InfoContainer>
                     </Slide>
                 </Wrapper>

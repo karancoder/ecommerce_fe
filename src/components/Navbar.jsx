@@ -1,6 +1,7 @@
 import React from 'react'
 import styled from 'styled-components'
 import { Search, ShoppingCartOutlined } from "@material-ui/icons"
+import { PersonAddAlt, PersonOutline } from '@mui/icons-material/';
 import { Badge } from '@material-ui/core'
 
 const Container = styled.div`
@@ -31,8 +32,8 @@ const Center = styled.div`
 `
 
 const Right = styled.div`
-    flex: 0 0 max(205px, 22%);
     display: flex;
+    flex: 0 0 max(205px, 22%);
     justify-content: flex-end;
     align-items: center;
 `
@@ -79,9 +80,45 @@ const StyledBadge = styled(Badge)({
 
 
 const MenuItem = styled.div`
-    font-size: 0.95rem;
+    display: inline-block;
+    float: left;
+    height: 3rem;
+    max-width: 3rem;
+    margin: 0 5px;
+    overflow: hidden;
+    background: #EFFFFD;
+    border-radius: 1rem;
+    box-shadow: 0px 10px 10px rgba(0, 0, 0, 0.1);
+    transition: all 0.3s ease-out;
+    color: black;
     cursor: pointer;
-    margin: 0em 0.85em;
+    :hover {
+        max-width: 10rem;
+    }
+    > * {
+        vertical-align:middle;
+    }
+`
+
+const MenuIcon = styled.div`
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 1rem;
+    height: 3rem;
+    width: 3rem;
+    border-radius: 2rem;
+    box-sizing: border-box;
+    transition: all 0.3s ease-out;
+    cursor: pointer;
+`
+
+const MenuText = styled.span`
+    font-size: 1rem;
+    color: black;
+    font-weight: 400;
+    margin: 0 0.5rem;
+    transition: all 0.3s ease-out;
 `
 
 const Navbar = () => {
@@ -104,15 +141,30 @@ const Navbar = () => {
                 </Center>
                 <Right>
                     <MenuItem>
-                        Sign-In
+                        <MenuIcon>
+                            <PersonOutline />
+                        </MenuIcon>
+                        <MenuText>
+                            Sign-In
+                        </MenuText>
                     </MenuItem>
                     <MenuItem>
-                        Register
+                        <MenuIcon>
+                            <PersonAddAlt />
+                        </MenuIcon>
+                        <MenuText>
+                            Register
+                        </MenuText>
                     </MenuItem>
                     <MenuItem>
-                        <StyledBadge badgeContent={4}>
-                            <ShoppingCartOutlined />
-                        </StyledBadge>
+                        <MenuIcon>
+                            <StyledBadge badgeContent={4}>
+                                <ShoppingCartOutlined />
+                            </StyledBadge>
+                        </MenuIcon>
+                        <MenuText>
+                            Cart
+                        </MenuText>
                     </MenuItem>
                 </Right>
             </Wrapper>
