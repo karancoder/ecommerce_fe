@@ -68,7 +68,10 @@ const Description = styled.div`
 const Button = styled.button`
     padding: 0.8em;
     font-size: 1rem;
-    background-color: transparent;
+    background-color: #EFFFFD;
+    border-radius: 0.8em;
+    border: none;
+    box-shadow: 0px 10px 10px rgba(0, 0, 0, 0.1);
     cursor: pointer;
 `
 
