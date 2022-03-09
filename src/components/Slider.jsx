@@ -6,14 +6,14 @@ const Container = styled.div`
     width: 100%;
     height: 100vh;
     display: flex;
-    background-color: coral;
+    background-color: #EFFFFD;
     position: relative;
 `
 
 const Arrow = styled.div`
     width: 50px;
     height: 50px;
-    background-color: #fff;
+    background-color: #B8FFF9;
     border-radius: 50%;
     display: flex;
     justify-content: center;
@@ -74,7 +74,8 @@ const Description = styled.div`
 const Button = styled.button`
     padding: 0.8em;
     font-size: 1rem;
-    background-color: #EFFFFD;
+    background-color: #084594;
+    color: #EFFFFD;
     border-radius: 0.8em;
     border: none;
     box-shadow: 0 0.3rem 0.3rem rgba(0, 0, 0, 0.2);
