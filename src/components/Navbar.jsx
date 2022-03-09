@@ -70,6 +70,7 @@ const Input = styled.input`
 
 const Logo = styled.h1`
     font.weight: bold;
+    cursor: pointer;
 `
 
 const StyledBadge = styled(Badge)({
