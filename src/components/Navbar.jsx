@@ -56,7 +56,7 @@ const SearchContainer = styled.div`
     border-radius: 0.8em;
     display: flex;
     align-items: center;
-    padding: 0.1em;
+    padding: 0.2em;
     background-color: white;
 `
 
@@ -89,7 +89,7 @@ const MenuItem = styled.div`
     overflow: hidden;
     background: #EFFFFD;
     border-radius: 1rem;
-    box-shadow: 0px 10px 10px rgba(0, 0, 0, 0.1);
+    box-shadow: 0 0.5rem 0.5rem rgba(0, 0, 0, 0.1);
     transition: all 0.3s ease-out;
     color: black;
     cursor: pointer;

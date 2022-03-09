@@ -25,7 +25,13 @@ const Arrow = styled.div`
     right: ${props=> props.direction === 'right' && '0.6em'};
     cursor: pointer;
     margin: auto;
-    opacity: 0.5;
+    opacity:0.6;
+    box-shadow: 0 0.3rem 0.3rem rgba(0, 0, 0, 0.2);
+    &:hover {
+        opacity: 0.9;
+        transform: translateY(-2.5%);
+        box-shadow: 0 0.8rem 0.8rem rgba(0, 0, 0, 0.2);
+    }
 `
 
 const Wrapper = styled.div`
@@ -71,7 +77,13 @@ const Button = styled.button`
     background-color: #EFFFFD;
     border-radius: 0.8em;
     border: none;
-    box-shadow: 0px 10px 10px rgba(0, 0, 0, 0.1);
+    box-shadow: 0 0.3rem 0.3rem rgba(0, 0, 0, 0.2);
+    opacity: 0.9;
+    &:hover {
+        opacity: 1;
+        transform: translateY(-2.5%);
+        box-shadow: 0 0.8rem 0.8rem rgba(0, 0, 0, 0.2);
+    }
     cursor: pointer;
 `
 
