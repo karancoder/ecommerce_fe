@@ -52,7 +52,8 @@ const Languages = styled.div`
 const SearchContainer = styled.div`
     flex: 1 0 95%;
     border: 1px solid white;
-    border-radius: 2px;
+    height: 2.5em;
+    border-radius: 0.8em;
     display: flex;
     align-items: center;
     padding: 0.1em;
