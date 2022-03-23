@@ -34,6 +34,11 @@ const Arrow = styled.div`
         transform: translateY(-2.5%);
         box-shadow: 0 0.8rem 0.8rem rgba(0, 0, 0, 0.2);
     }
+    &:active {
+        opacity: 0.9;
+        transform: translateY(3%);
+        box-shadow: 0 0.5rem 0.5rem rgba(0, 0, 0, 0.4);
+    }
     z-index: 2;
 `
 
