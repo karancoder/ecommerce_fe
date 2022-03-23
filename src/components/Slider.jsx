@@ -1,13 +1,15 @@
 import { ArrowLeft, ArrowRight } from '@material-ui/icons'
 import React from 'react'
 import styled from 'styled-components'
+import { slides } from '../data/slider.js'
 
 const Container = styled.div`
     width: 100%;
-    height: 100vh;
+    height: 80vh;
     display: flex;
     background-color: #EFFFFD;
     position: relative;
+    overflow: hidden;
 `
 
 const Arrow = styled.div`
@@ -32,26 +34,31 @@ const Arrow = styled.div`
         transform: translateY(-2.5%);
         box-shadow: 0 0.8rem 0.8rem rgba(0, 0, 0, 0.2);
     }
+    z-index: 2;
 `
 
 const Wrapper = styled.div`
     height: 100%;
+    display: flex;
+    transform: translateX(-${(props) => props.slideNumber * 100}vw);
 `
 
 const Slide = styled.div`
     width: 100vw;
-    height: 100vh;
+    height: 100%;
     display: flex;
     align-items: center;
 `
 
 const ImgContainer = styled.div`
+    display: flex;
+    align-items: center;
     height: 100%;
     flex: 1;
 `
 
 const Image = styled.img`
-    height: 80%;
+    height: 100%;
 `
 
 const InfoContainer = styled.div`
@@ -89,30 +96,41 @@ const Button = styled.button`
 `
 
 const Slider = () => {
+    const [slideNumber, setSlideNumber] = React.useState(0);
+    const handleClick = (dir) => {
+        if (dir === 'left') {
+            setSlideNumber(slideNumber > 0 ? slideNumber - 1 : (slides.length - 1) )
+        }
+        else {
+            setSlideNumber(slideNumber < (slides.length - 1) ? slideNumber + 1 : 0)
+        }
+    };
     return (
         <Container>
-            <Arrow direction="left">
+            <Arrow direction="left" onClick={() => handleClick("left")}>
                 <ArrowLeft />
             </Arrow>
-                <Wrapper>
-                    <Slide>
+            <Wrapper slideNumber={slideNumber}>
+                {slides.map( (slide, i) => (
+                    <Slide key={i}>
                         <ImgContainer>
-                            <Image src={require("../images/mac_screen.jpg")} alt={"something here"}/>
+                            <Image src={require("../images/" + slide.img)} alt={slide.alt}/>
                         </ImgContainer>
                         <InfoContainer>
                             <Title>
-                                Mac Screen
+                                {slide.title}
                             </Title>
                             <Description>
-                                Get Mac Screen at 20% off! Once in lifetime offer!
+                                {slide.description}
                             </Description>
                             <Button>
-                                Get Now!
+                                {slide.btnText}
                             </Button>
                         </InfoContainer>
                     </Slide>
-                </Wrapper>
-            <Arrow direction="right">
+                ))}
+            </Wrapper>
+            <Arrow direction="right" onClick={() => handleClick("right")}>
                 <ArrowRight />
             </Arrow>
         </Container>
