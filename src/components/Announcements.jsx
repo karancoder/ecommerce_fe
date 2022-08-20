@@ -1,5 +1,5 @@
-import React from 'react'
-import styled from 'styled-components'
+import React from "react";
+import styled from "styled-components";
 
 const Container = styled.div`
     display: flex;
@@ -11,14 +11,10 @@ const Container = styled.div`
     color: white;
     font-size: 0.95rem;
     font-weight: bold;
-`
+`;
 
 const Announcements = () => {
-    return (
-        <Container>
-            Super Discounts! Free Shipping over Rs. 450!
-        </Container>
-    )
-}
+    return <Container>Super Discounts! Free Shipping over Rs. 450!</Container>;
+};
 
-export default Announcements
+export default Announcements;
