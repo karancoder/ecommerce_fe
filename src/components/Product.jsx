@@ -38,14 +38,19 @@ const InfoContainer = styled.div`
     justify-content: center;
     gap: 0.5rem;
     align-items: center;
-    background-color: rgba(255, 255, 255, 0.5);
+    background-color: rgba(
+        255,
+        255,
+        255,
+        ${(props) => (props.isOpen ? "0.7" : "0")}
+    );
     height: 100%;
     width: 100%;
     transition: all 0.3s ease-in-out;
-    top: ${(props) => (props.isOpen ? "0%" : "110%")};
 `;
 
 const Icon = styled.div`
+    position: relative;
     background-color: #effffd;
     padding: 0.8rem;
     border-radius: 50%;
@@ -55,8 +60,10 @@ const Icon = styled.div`
     justify-content: center;
     align-items: center;
     box-shadow: 0 0.3rem 0.3rem rgba(0, 0, 0, 0.2);
+    top: ${(props) => (props.isOpen ? "0%" : "70%")};
     cursor: pointer;
-    transition: all 0.2s ease;
+    transition: all 0.2s ease-in-out
+        ${(props) => String(props.transitionDelay) + "ms"};
     &:hover {
         opacity: 1;
         transform: scale(1.2);
@@ -83,13 +90,17 @@ const Product = ({ item }) => {
             <Overlay onMouseEnter={openOptions} onMouseLeave={closeOptions}>
                 <Image src={require("../images/" + item.img)} />
                 <InfoContainer isOpen={optionsOpen}>
-                    <Icon onClick={addToCart}>
+                    <Icon
+                        isOpen={optionsOpen}
+                        transitionDelay={0}
+                        onClick={addToCart}
+                    >
                         <AddShoppingCartIcon />
                     </Icon>
-                    <Icon>
+                    <Icon isOpen={optionsOpen} transitionDelay={100}>
                         <SearchIcon />
                     </Icon>
-                    <Icon>
+                    <Icon isOpen={optionsOpen} transitionDelay={200}>
                         <FavoriteBorderIcon />
                     </Icon>
                 </InfoContainer>
